@@ -1,5 +1,5 @@
-import { NavItemProps } from "./NavItem";
+import { RouteObject } from "react-router-dom";
 
 export type NavProps = {
-  navItems: NavItemProps[];
+  navItems: RouteObject[];
 };

@@ -14,8 +14,8 @@ export const Nav: React.FC<NavProps> = ({ navItems }) => {
   return (
     <NavStyled>
       <ul>
-        {navItems.map(({ path }) => (
-          <NavItem name={getPageName(path)} path={path ?? "/"} />
+        {navItems.map(({ path, name }) => (
+          <NavItem key={path} name={name} path={path} />
         ))}
       </ul>
     </NavStyled>

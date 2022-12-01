@@ -1,7 +1,6 @@
-import { Home } from "./pages/Home";
-import "./App.css";
 import { Nav } from "./components/common/Nav";
 import { NavItemProps } from "./components/common/Nav/NavItem";
+import { Outlet } from "react-router-dom";
 
 const navItems: NavItemProps[] = [
   {
@@ -9,26 +8,21 @@ const navItems: NavItemProps[] = [
     path: "/",
   },
   {
-    name: "About",
-    path: "/about",
-  },
-  {
-    name: "Contact",
-    path: "/contact",
+    name: "Blog",
+    path: "/blog",
   },
 ];
 
-function App() {
+function Root() {
   return (
     <>
       <Nav navItems={navItems} />
-
       <main>
-        <Home />
+        <Outlet />
       </main>
       <footer>Made by me!</footer>
     </>
   );
 }
 
-export default App;
+export default Root;

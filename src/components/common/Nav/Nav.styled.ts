@@ -5,7 +5,7 @@ export const NavStyled = styled.nav`
   margin: 0;
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0;
     margin: 0;

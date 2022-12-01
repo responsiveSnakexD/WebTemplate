@@ -9,26 +9,38 @@ import { Home } from "./pages/Home";
 import ErrorPage from "./pages/Error";
 import "./index.css";
 import { Nav } from "./components/common/Nav";
+import Blog from "./pages/Blog";
+import BlogItem, { loader as blogLoader } from "./pages/Blog/BlogItem";
+import Root from "./Root";
 
 const navItems: RouteObject[] = [
   {
     path: "/",
-    element: <Home />,
+    element: <Root />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/about",
-    element: <h1>About</h1>,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "blog",
+        element: <Blog />,
+        children: [
+          {
+            path: ":blogId",
+            element: <BlogItem />,
+            loader: blogLoader,
+          },
+        ],
+      },
+    ],
   },
 ];
 const router = createBrowserRouter(navItems);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Nav navItems={navItems} />
-    <main>
-      <RouterProvider router={router} />
-    </main>
-    <footer>Made by me!</footer>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

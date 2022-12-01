@@ -5,7 +5,7 @@ import { Button } from "../components/common/Button";
 export const Home: React.FC = () => {
   const [clicked, setClicked] = useState(false);
   return (
-    <HomeStyled>
+    <div>
       <h1>Home</h1>
       {clicked && (
         <h2>
@@ -14,13 +14,6 @@ export const Home: React.FC = () => {
         </h2>
       )}
       <Button onClick={() => setClicked(true)}>Click Me!</Button>
-    </HomeStyled>
+    </div>
   );
 };
-
-const HomeStyled = styled.div`
-  h1 {
-    color: red;
-    text-align: center;
-  }
-`;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "../components/common/Button";
+import { ButtonType } from "../components/common/Button/type";
 
 export const Home: React.FC = () => {
   const [clicked, setClicked] = useState(false);
@@ -13,7 +14,9 @@ export const Home: React.FC = () => {
           <span onClick={() => setClicked(false)}>unclick me pls</span>
         </h2>
       )}
-      <Button onClick={() => setClicked(true)}>Click Me!</Button>
+      <Button type={ButtonType.Primary} onClick={() => setClicked(true)}>
+        Click Me!
+      </Button>
     </HomeStyled>
   );
 };

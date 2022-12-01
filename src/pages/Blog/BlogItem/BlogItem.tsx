@@ -6,16 +6,22 @@ const BlogItem: FC = () => {
   if (!data) {
     return <div>Loading...</div>;
   }
+  const hasAuthor = (value: unknown): value is { author: string } =>
+    typeof value === "object" && value !== null && "author" in value;
+  if (!hasAuthor(data)) {
+    throw new Error("Invalid data");
+  }
+
+  const { author, ...post } = data;
   if (!isPost(data)) {
     throw new Error("Invalid post");
   }
-  const { title, body, userId, tags, reactions } = data;
-
+  const { title, body, tags, reactions } = data;
   return (
     <div>
       <h1>{title}</h1>
       <p>{body}</p>
-      <p>Author: {userId}</p>
+      <p>Author: {author}</p>
       <p>Tags: {tags.join(", ")}</p>
       <p>Reactions: {reactions}</p>
     </div>

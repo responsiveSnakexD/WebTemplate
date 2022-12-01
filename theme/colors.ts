@@ -5,7 +5,7 @@ export enum ColorType {
   Error = "error",
 }
 
-type Colors = {
+export type Colors = {
   [key in ColorType]: {
     text: string;
     background: string;
@@ -13,38 +13,38 @@ type Colors = {
 };
 
 export const light: Colors = {
-  primary: {
+  [ColorType.Primary]: {
     text: "#000000",
     background: "#ffffff",
   },
-  secondary: {
+  [ColorType.Secondary]: {
     text: "#000000",
     background: "#ffffff",
   },
-  accent: {
+  [ColorType.Accent]: {
     text: "#000000",
     background: "#ffffff",
   },
-  error: {
+  [ColorType.Error]: {
     text: "#000000",
     background: "#ffffff",
   },
 };
 
 export const dark: Colors = {
-  primary: {
+  [ColorType.Primary]: {
     text: "#ffffff",
     background: "#000000",
   },
-  secondary: {
+  [ColorType.Secondary]: {
     text: "#ffffff",
     background: "#000000",
   },
-  accent: {
+  [ColorType.Accent]: {
     text: "#ffffff",
     background: "#000000",
   },
-  error: {
+  [ColorType.Error]: {
     text: "#ffffff",
     background: "#000000",
   },

@@ -1,19 +1,26 @@
-import { dark, light } from "./colors";
-import { typography } from "./typography";
-import { spacing } from "./spacing";
+import { dark, light, Colors } from "./colors";
+import { Typography, typography } from "./typography";
+import { Spacing, spacing } from "./spacing";
 
-const commonTheme = {
+export type Theme = {
+  colors: Colors;
+  typography: Typography;
+  spacing: Spacing;
+  transitionTime: number;
+};
+
+const commonTheme: Omit<Theme, "colors"> = {
+  transitionTime: 0.3,
   typography,
   spacing,
 };
 
-export const lightTheme = {
+export const lightTheme: Theme = {
   ...commonTheme,
   colors: light,
 };
 
-export const darkTheme = {
+export const darkTheme: Theme = {
   ...commonTheme,
   colors: dark,
 };
-export type Theme = typeof lightTheme;

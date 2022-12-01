@@ -1,5 +1,11 @@
-type Typography = {
-  [key: string]: {
+export enum TypographyGroup {
+  Heading1 = "heading1",
+  Heading2 = "heading2",
+  Paragraph = "paragraph",
+}
+
+export type Typography = {
+  [key in TypographyGroup]: {
     fontFamily: string;
     fontSize: number;
     fontWeight: number;
@@ -8,19 +14,19 @@ type Typography = {
 };
 
 export const typography: Typography = {
-  paragraph: {
+  [TypographyGroup.Paragraph]: {
     fontFamily: "Roboto",
     fontSize: 16,
     lineHeight: 24,
     fontWeight: 400,
   },
-  heading1: {
+  [TypographyGroup.Heading1]: {
     fontFamily: "Roboto",
     fontSize: 32,
     lineHeight: 40,
     fontWeight: 700,
   },
-  heading2: {
+  [TypographyGroup.Heading2]: {
     fontFamily: "Roboto",
     fontSize: 24,
     lineHeight: 32,

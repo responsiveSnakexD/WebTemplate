@@ -1,13 +1,27 @@
-export const spacing = {
-  margin: {
-    small: 8,
-    medium: 16,
-    large: 24,
+export enum SpacingGroup {
+  Small = "small",
+  Medium = "medium",
+  Large = "large",
+}
+
+export type Spacing = {
+  [key in SpacingGroup]: {
+    margin: number;
+    padding: number;
+  };
+};
+
+export const spacing: Spacing = {
+  small: {
+    margin: 8,
+    padding: 8,
   },
-  padding: {
-    small: 8,
-    medium: 16,
-    large: 24,
+  medium: {
+    margin: 16,
+    padding: 16,
   },
-  borderRadius: 8,
+  large: {
+    margin: 24,
+    padding: 24,
+  },
 };

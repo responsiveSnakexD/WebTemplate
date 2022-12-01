@@ -16,3 +16,4 @@ export const darkTheme = {
   ...commonTheme,
   colors: dark,
 };
+export type Theme = typeof lightTheme;

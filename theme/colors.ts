@@ -1,4 +1,18 @@
-export const light = {
+export enum ColorType {
+  Primary = "primary",
+  Secondary = "secondary",
+  Accent = "accent",
+  Error = "error",
+}
+
+type Colors = {
+  [key in ColorType]: {
+    text: string;
+    background: string;
+  };
+};
+
+export const light: Colors = {
   primary: {
     text: "#000000",
     background: "#ffffff",
@@ -16,8 +30,6 @@ export const light = {
     background: "#ffffff",
   },
 };
-
-type Colors = typeof light;
 
 export const dark: Colors = {
   primary: {

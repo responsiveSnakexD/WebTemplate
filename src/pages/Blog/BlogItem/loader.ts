@@ -3,7 +3,7 @@ import { isPost } from "./BlogItem";
 export const loader: LoaderFunction = async ({ params }) => {
   const response = await fetch(`https://dummyjson.com/posts/${params.blogId}`);
   const data = await response.json();
-  if (!isPost(data)) {
+  if (!hasUserId(data)) {
     throw new Error("Invalid data");
   }
   const authorResponse = await fetch(
@@ -26,3 +26,9 @@ const hasName = (
   data !== null &&
   "firstName" in data &&
   "lastName" in data;
+
+const hasUserId = (data: unknown): data is { userId: number } =>
+  typeof data === "object" &&
+  data !== null &&
+  "userId" in data &&
+  typeof (data as { userId: unknown }).userId === "number";

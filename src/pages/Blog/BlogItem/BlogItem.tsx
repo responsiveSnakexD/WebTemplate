@@ -13,10 +13,10 @@ const BlogItem: FC = () => {
   }
 
   const { author, ...post } = data;
-  if (!isPost(data)) {
+  if (!isPost(post)) {
     throw new Error("Invalid post");
   }
-  const { title, body, tags, reactions } = data;
+  const { title, body, tags, reactions } = post;
   return (
     <div>
       <h1>{title}</h1>

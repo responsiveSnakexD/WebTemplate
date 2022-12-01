@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { ButtonType } from "./type";
 
-export const ButtonStyled = styled.a`
+export const ButtonStyled = styled.a<{ type: ButtonType }>`
   background-color: #000;
   color: #fff;
   padding: 0.5rem;

@@ -7,8 +7,8 @@ export const Nav: React.FC<NavProps> = ({ navItems }) => {
   return (
     <NavStyled>
       <ul>
-        {navItems.map((item) => (
-          <NavItem {...item} />
+        {navItems.map(({ name, path }) => (
+          <NavItem name={name} path={path} />
         ))}
       </ul>
     </NavStyled>

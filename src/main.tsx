@@ -8,7 +8,6 @@ import {
 import { Home } from "./pages/Home";
 import ErrorPage from "./pages/Error";
 import "./index.css";
-import { Nav } from "./components/common/Nav";
 import Blog from "./pages/Blog";
 import BlogItem, { loader as blogLoader } from "./pages/Blog/BlogItem";
 import Root from "./Root";

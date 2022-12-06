@@ -1,14 +1,15 @@
 import React from "react";
+import { ColorType } from "../../../../theme/colors";
 import { ButtonStyled } from "./Button.styled";
-import { ButtonProps, ButtonType } from "./type";
+import { ButtonProps } from "./type";
 
 export const Button: React.FC<ButtonProps> = ({
-  type = ButtonType.Primary,
+  type = ColorType.Primary,
   children,
   onClick,
 }) => {
   return (
-    <ButtonStyled type={type} onClick={onClick}>
+    <ButtonStyled color={type} onClick={onClick}>
       {children}
     </ButtonStyled>
   );

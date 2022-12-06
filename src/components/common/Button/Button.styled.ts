@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { ButtonType } from "./type";
+import { ColorType } from "../../../../theme/colors";
+import { applyColor } from "../../../mixins";
 
-export const ButtonStyled = styled.a<{ type: ButtonType }>`
-  background-color: #000;
-  color: #fff;
+export const ButtonStyled = styled.a<{ color: ColorType }>`
+  ${applyColor};
   padding: 0.5rem;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;

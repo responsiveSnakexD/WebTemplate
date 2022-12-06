@@ -1,12 +1,14 @@
 import styled from "styled-components";
+import { ColorType } from "../../../../../theme/colors";
+import { SpacingGroup } from "../../../../../theme/spacing";
+import { applyColor, applySpacing } from "../../../../mixins";
 
 export const NavItemStyled = styled.li`
   a {
-    padding: 0.5rem;
-    margin: 0.5rem;
+    ${({ theme }) => applySpacing({ theme, spacing: SpacingGroup.Small })}
     transition: all 0.3s ease-in-out;
     &:hover {
-      color: #f47777;
+      ${({ theme }) => applyColor({ theme, color: ColorType.Primary })}
     }
   }
 `;

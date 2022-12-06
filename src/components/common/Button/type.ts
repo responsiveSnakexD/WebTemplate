@@ -1,11 +1,7 @@
-export enum ButtonType {
-  Primary = "primary",
-  Secondary = "secondary",
-  Danger = "danger",
-}
+import { ColorType } from "../../../../theme/colors";
 
 export type ButtonProps = {
-  type?: ButtonType;
+  type?: ColorType;
   children: React.ReactNode;
   onClick?: () => void;
 };

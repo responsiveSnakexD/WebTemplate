@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     ${({ theme }) => applyColor({ theme, color: ColorType.Background })}
+  }
 
   h1,
   h2,
@@ -40,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     border-top: 1px solid #eaeaea;
     font-family: sans-serif;
   }
-
+  
 `;
 
 export default GlobalStyle;

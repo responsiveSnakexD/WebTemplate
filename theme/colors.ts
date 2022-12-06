@@ -3,6 +3,7 @@ export enum ColorType {
   Secondary = "secondary",
   Accent = "accent",
   Error = "error",
+  Background = "background",
 }
 
 export type Colors = {
@@ -14,20 +15,24 @@ export type Colors = {
 
 export const light: Colors = {
   [ColorType.Primary]: {
-    text: "#000000",
-    background: "#ffffff",
+    text: "#E75A7C",
+    background: "#BBC7A4",
   },
   [ColorType.Secondary]: {
-    text: "#000000",
-    background: "#ffffff",
+    text: "#2C363F",
+    background: "#D6DBD2",
   },
   [ColorType.Accent]: {
-    text: "#000000",
-    background: "#ffffff",
+    text: "#E75A7C",
+    background: "#BBC7A4",
   },
   [ColorType.Error]: {
-    text: "#000000",
-    background: "#ffffff",
+    text: "#2C363F",
+    background: "#E75A7C",
+  },
+  [ColorType.Background]: {
+    text: "#E75A7C",
+    background: "#F2F5EA",
   },
 };
 
@@ -47,5 +52,9 @@ export const dark: Colors = {
   [ColorType.Error]: {
     text: "#ffffff",
     background: "#000000",
+  },
+  [ColorType.Background]: {
+    text: "#ffffff",
+    background: "#F2F5EA",
   },
 };

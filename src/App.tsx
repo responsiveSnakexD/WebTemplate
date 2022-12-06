@@ -1,7 +1,9 @@
 import { Home } from "./pages/Home";
-import "./App.css";
 import { Nav } from "./components/common/Nav";
 import { NavItemProps } from "./components/common/Nav/NavItem";
+import { ThemeProvider } from "styled-components";
+import { lightTheme } from "../theme";
+import GlobalStyle from "./globalStyles";
 
 const navItems: NavItemProps[] = [
   {
@@ -20,14 +22,14 @@ const navItems: NavItemProps[] = [
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={lightTheme}>
+      <GlobalStyle />
       <Nav navItems={navItems} />
-
       <main>
         <Home />
       </main>
       <footer>Made by me!</footer>
-    </>
+    </ThemeProvider>
   );
 }
 

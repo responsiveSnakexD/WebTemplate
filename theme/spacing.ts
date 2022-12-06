@@ -12,15 +12,15 @@ export type Spacing = {
 };
 
 export const spacing: Spacing = {
-  small: {
+  [SpacingGroup.Small]: {
     margin: 8,
     padding: 8,
   },
-  medium: {
+  [SpacingGroup.Medium]: {
     margin: 16,
     padding: 16,
   },
-  large: {
+  [SpacingGroup.Large]: {
     margin: 24,
     padding: 24,
   },

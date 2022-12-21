@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { ControlledInputProps } from "./types";
 import { FieldValues, useController } from "react-hook-form";
+import { InputContainer } from "./ControlledInput.styled";
 
 const ControlledInput: <T extends FieldValues>(
   data: ControlledInputProps<T>
@@ -10,10 +11,10 @@ const ControlledInput: <T extends FieldValues>(
   } = useController({ control, name });
 
   return (
-    <div>
-      <p>{label}</p>
+    <InputContainer>
+      <div>{label}</div>
       <input type={password ? "password" : "text"} onChange={onChange} />
-    </div>
+    </InputContainer>
   );
 };
 

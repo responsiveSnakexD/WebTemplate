@@ -5,15 +5,23 @@ import { AuthStatesValues } from "../../../machines/Auth/types";
 import { useForm } from "react-hook-form";
 import ControlledInput from "../ControlledInput";
 import Modal from "../Modal";
+import { FormContainer, SubmitButton } from "./LoginModal.styled";
+import { LoginData } from "../../../api/types";
 
 const LoginModal: React.FC = () => {
   const { auth } = useMachines();
   const [state] = useActor(auth);
-  const { control } = useForm({ defaultValues: { email: "", password: "" } });
+  const { control, handleSubmit } = useForm<LoginData>({
+    defaultValues: { email: "", password: "" },
+  });
+
+  const onValidData = (payload: LoginData) => {
+    auth.send({ type: "LOGIN", payload });
+  };
 
   return (
     <Modal visible={state.matches(AuthStatesValues.UnauthorizedLogging)}>
-      <div>
+      <FormContainer>
         <ControlledInput control={control} name="email" label="Email" />
         <ControlledInput
           control={control}
@@ -21,7 +29,10 @@ const LoginModal: React.FC = () => {
           label="Password"
           password
         />
-      </div>
+        <SubmitButton onClick={handleSubmit(onValidData)}>
+          Zaloguj!
+        </SubmitButton>
+      </FormContainer>
     </Modal>
   );
 };

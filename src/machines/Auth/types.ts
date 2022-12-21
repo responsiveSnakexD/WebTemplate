@@ -1,3 +1,5 @@
+import { LoginData } from "../../api/types";
+
 export enum AuthStatesEnum {
   Unauthorized = "unauthorized",
   Loading = "loading",
@@ -35,4 +37,7 @@ export enum AuthEventsEnum {
   Login = "LOGIN",
 }
 
-export type AuthEvents = { type: "LOGIN" } | { type: "LOGOUT" };
+export type AuthEvents =
+  | { type: "LOGIN"; payload: LoginData }
+  | { type: "LOGOUT" }
+  | { type: "SHOW_MODAL" };

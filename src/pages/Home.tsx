@@ -9,7 +9,7 @@ export const Home: React.FC = () => {
       <h1>Home</h1>
       {clicked && (
         <h2>
-          Lol you just clicked something{" "}
+          Lol you just clicked something
           <span onClick={() => setClicked(false)}>unclick me pls</span>
         </h2>
       )}
